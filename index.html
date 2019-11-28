@@ -20,14 +20,14 @@
 			<div id="mapid" style="width: 1500px; height: 900px;"></div>
 
 <script>
-	var mymap = L.map('mapid').setView([51.505, -0.09], 7); //Initialise the leaflet map in our div
+	var mymap = L.map('mapid').setView([51.505, -0.09], 11); //Initialise the leaflet map in our div
 
 // Other Tile Map Style can be found here : http://leaflet-extras.github.io/leaflet-providers/preview/index.html
 //NEVER expose an apikey!!
 //https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository /Remove a file from history
 //https://gist.github.com/derzorngottes/3b57edc1f996dddcab25 /gitIgnore
 	L.tileLayer(
-		//'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', //CARTO DB Layer
+		'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', //CARTO DB Layer
 		{
 		maxZoom: 18,
 		attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>', //CARTO attribution
@@ -41,7 +41,7 @@
 });
 
   //Add locations using CSV DATA
-	for(var k=0;k<35;k++) //bad loop, but for the workshop is ok
+	for(var k=0;k<2;k++) //bad loop, but for the workshop is ok
 		{// CSV need to be place in the locations folder and named locationsX.csv where X is the number
 				
 				Papa.parse("./locations/locations"+k+".csv",
